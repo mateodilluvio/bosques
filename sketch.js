@@ -1,31 +1,172 @@
 function setup() {
   createCanvas(512, 512);
-  background(60);
-  
-  LineasVerticales();
-  stroke(130, 180); // Color de LineasVerticales2, (gray, alpha).
-  LineasVerticales2();
-}
+  background(20);
 
-
-function LineasVerticales() {
-  let x = 0; // Posición inicial de la línea en el eje x
-  while (x <= width) {
-    line(x, random(300), x, 512); // Dibuja una línea vertical desde el punto (x, 0) hasta (x, height)
-    x += random(10); // Espacio entre líneas
+  for (var x = 0; x < width; x += 10) { // Dibuja las líneas verticales oscuras.
+    stroke(random(0, 20))
+    line(x, random(30, 175), x, height);
   }
-}
-function LineasVerticales2() {
-  let x = 0; 
-  while (x <= width) {
-    line(x, random(180), x, 512); 
-    x += random(10); 
-}
-}
-function Ramas(){
-// quiero dibujar unas "Ramas" similares a las de la obra de Grace C Hertlein, la imagen está en la carpeta
-}
 
-function draw() {
+  for (var l = -5; l < width; l += 10) { // Dibuja las líneas verticales claras.
+    stroke(random(50, 90))
+    line(l, random(30, 175), l, height);
+  }
 
+  for (var q = -3; q < width; q += 2.3) { // Dibuja las líneas verticales oscuras y con valor alpha de 100.
+    stroke(random(0, 40), 100);
+    line(q, random(30, 175), q, height);
+  }
+
+  for (var q = -3; q < width; q += 2.3) {
+    stroke(200, 20);
+    line(q, random(30, 175), q, height);
+  }
+
+  let i = 50; // las variables "j" e "i" juntas crean el punto de unión entre las líneas diagonales. 
+  let j = 260;
+
+  for (i = 50; i < width; i += 100) { // Dibuja las diagonales 5 veces seguidas disminuyendo el height de sus coordenadas.
+    stroke(random(55, 100));
+    line(i, j, (i + 15), (j - 35));
+    stroke(random(30, 70));
+    line(i, j, (i - 15), (j - 35));
+    j += 30;
+  }
+
+  /* Dibujo las Ramas con ayuda de push, pop y translate para que ocupen diferentes posiciones del canvas */
+
+  push();
+  translate(350, 200);
+  stroke(random(55, 100));
+  line(50, 250, 65, 215);
+  stroke(random(30, 70));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(-20, 100);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(40, -40);
+  stroke(random(55, 100));
+  line(50, 250, 65, 215);
+  stroke(random(30, 70));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(440, 0);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(320, -40);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(180, 200);
+  stroke(random(55, 100));
+  line(50, 250, 65, 215);
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(0, 230);
+  stroke(random(55, 100));
+  line(50, 250, 65, 215);
+  stroke(random(30, 70));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(80, 200);
+  stroke(random(55, 100));
+  line(50, 250, 65, 215);
+  stroke(random(30, 70));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(265, 160);
+  stroke(random(55, 100));
+  line(50, 250, 65, 215);
+  stroke(random(30, 70));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(130, 140);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(185, -20);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(375, 30);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(260, 20);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(100, -86);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(250, -70);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(390, -60);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
+
+  push();
+  translate(50, 120);
+  stroke(random(30, 70));
+  line(50, 250, 65, 215);
+  stroke(random(55, 100));
+  line(50, 250, 35, 215);
+  pop();
 }
