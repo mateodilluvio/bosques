@@ -26,7 +26,7 @@ function setup() {
   let j = 260;
 
   for (i = 50; i < width; i += 100) { // Dibuja las diagonales 5 veces seguidas disminuyendo el height de sus coordenadas.
-    stroke(random(55, 100));
+    stroke(random(90, 100));
     line(i, j, (i + 15), (j - 35));
     stroke(random(30, 70));
     line(i, j, (i - 15), (j - 35));
